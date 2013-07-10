@@ -1,5 +1,5 @@
  require 'rubygems'
-  require 'bundler/setup' # Releasy requires require that your application uses bundler.
+  require 'bundler/setup' # Releasy requires that your application uses bundler.
   require 'releasy'
 
   #<<<
@@ -16,7 +16,7 @@
 
     # Create a variety of releases, for all platforms.
     add_build :osx_app do
-      url "com.github.cat-game"
+      url "http://github.com/MattLemmon/cat-game"
       wrapper "wrappers/gosu-mac-wrapper-0.7.41.tar.gz" # Assuming this is where you downloaded this file.
       icon "media/icon.icns"
       add_package :tar_gz
@@ -25,7 +25,7 @@
     add_build :source do
       add_package :"7z"
     end
-
+=begin
     # If building on a Windows machine, :windows_folder and/or :windows_installer are recommended.
     add_build :windows_folder do
       icon "media/icon.ico"
@@ -41,7 +41,7 @@
       executable_type :windows # Assuming you don't want it to run with a console window.
       add_package :zip
     end
-
+=end
     # If unable to build on a Windows machine, :windows_wrapped is the only choice.
     add_build :windows_wrapped do
       wrapper "wrappers/ruby-1.9.3-p0-i386-mingw32.7z" # Assuming this is where you downloaded this file.
